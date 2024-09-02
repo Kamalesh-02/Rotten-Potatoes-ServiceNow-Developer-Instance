@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="c05192ee83489210c404a730ceaad3c7" label="Reviews" max_length="40" name="x_1514214_rp_reviews" type="collection">
+        <element label="Game" max_length="32" name="game" reference="x_1514214_rp_games" type="reference"/>
+        <element label="Review Date" max_length="40" name="review_date" type="glide_date"/>
+        <element label="Reviewer" max_length="32" name="reviwer" reference="sys_user" type="reference"/>
+        <element choice="3" default="Not Requested Yet" label="Status" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="Approved"/>
+                <element inactive_on_update="false" label="Not Request Yet" sequence="0" value="Not Request Yet"/>
+                <element inactive_on_update="false" label="Rejected" sequence="3" value="Rejected"/>
+                <element inactive_on_update="false" label="Requested" sequence="1" value="Requested"/>
+            </choice>
+        </element>
+        <element choice="3" default="1" label="Star" max_length="40" name="star" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="1" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="3" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="5" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="2" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="4" sequence="3" value="4"/>
+            </choice>
+        </element>
+        <element label="Comments" max_length="1000" name="comments" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <index name="index">
+            <element name="game"/>
+        </index>
+        <index name="index2">
+            <element name="reviwer"/>
+        </index>
+    </element>
+</database>
